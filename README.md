@@ -2,6 +2,8 @@
 
 This is a reproduction of a bug that occurs in version `6.2.8` of the **MikroORM** stack.
 
+Official issue: https://github.com/mikro-orm/mikro-orm/issues/5601
+
 ## How To
 
 1. clone this repo and install the dependencies. run `yarn install`
