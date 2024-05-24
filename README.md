@@ -1,42 +1,13 @@
-# A starter kit for creating NodeJS apps
+# Reproduction
 
-This starter kit uses
+This is a reproduction of a bug that occurs in version `6.2.8` of the **MikroORM** stack.
 
-- Babel
-- TypeScript
-- Prettier
-- Nodemon
+## How To
 
-It supports
-
-- absolute path imports
-- transpiling TypeScript files
-- auto-restart on changes to files in `src` folder
-
-# Guide
-
-> **This starter kit assumes, you are using Yarn instead of NPM.**
-
-## Install dependencies
-
-```
-yarn
-```
-
-## Run app in development
-
-```
-yarn dev
-```
-
-## Build production app
-
-```
-yarn build
-```
-
-## Run app in production
-
-```
-yarn start
-```
+1. clone this repo and install the dependencies. run `yarn install`
+2. start the database with docker. run `yarn db` in a separate tab.
+3. run `yarn dev` -> no error
+4. upgrade to `v6.2.8`. run `yarn dep:up`
+5. run `yarn dev` -> **error** (see line 28 in `src/index.ts`)
+6. downgrade to `v6.2.7`. run `yarn dep:down`
+7. run `yarn dev` -> no error
